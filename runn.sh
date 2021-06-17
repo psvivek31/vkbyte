@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "python"
+echo "python1"
 python pythontest.py
