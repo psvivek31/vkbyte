@@ -27,7 +27,7 @@ jobs:
        key: ${{ secrets.M1_KEY }}
        known_hosts: ${{ secrets.DST }}
     - name: running
-      run: ls -ltr
+      run: hostname
        
         
 #     steps:
