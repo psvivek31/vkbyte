@@ -24,7 +24,7 @@ jobs:
     - name: executing remote ssh commands using password
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: whoami
+        command: pwd
         host: ${{ secrets.DST }}
         username: ${{ secrets.M1_USER }}
         privateKey: ${{ secrets.M1_KEY }}
