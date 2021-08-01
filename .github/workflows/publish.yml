@@ -23,7 +23,7 @@ jobs:
       steps:
       -name: creating directory
         run: |
-          mkdir /hom/centos/dir1
+          mkdir /home/centos/dir1
           mkdir dir22
 
 #     steps:
