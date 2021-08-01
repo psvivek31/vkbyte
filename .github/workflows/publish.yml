@@ -19,12 +19,12 @@ on:
 
 jobs:
   deploy:
-
     runs-on: self-hosted
       steps:
-        -name: creating directory
-          run: mkdir /hom/centos/dir1
-          run: mkdir dir22
+      -name: creating directory
+        run: |
+          mkdir /hom/centos/dir1
+          mkdir dir22
 
 #     steps:
 #     - uses: actions/checkout@v2
