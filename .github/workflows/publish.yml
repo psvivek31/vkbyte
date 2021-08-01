@@ -21,10 +21,14 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: creating directory
-        run: | 
-          mkdir /home/centos/dir1
-          mkdir dir22
+    - name: remote
+      uses: shimataro/ssh-key-action@v2
+      with:
+       key: ${{ secrets.M1_KEY }}
+       known_hosts: ${{ secrets.DST }}
+    - name: running
+      run: ls -ltr
+       
         
 #     steps:
 #     - uses: actions/checkout@v2
