@@ -22,14 +22,13 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: executing remote ssh commands using password
+      uses: garygrossgarten/github-action-ssh@release
       with:
+        command: whoami
         host: ${{ secrets.DST }}
         username: ${{ secrets.M1_USER }}
-        key: ${{ secrets.M1_KEY }}
-        port: 22
-        script: |
-          whoami
-          hostname
+        privateKey: ${{ secrets.M1_KEY }}
+        
        
         
 #     steps:
