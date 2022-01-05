@@ -21,10 +21,15 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: creating directory
-        run: | 
-          mkdir /home/centos/dir1
-          mkdir dir22
+    - name: executing remote ssh commands using password
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: mkdir me-here;ls -a
+        host: ${{ secrets.DST }}
+        username: ${{ secrets.M1_USER }}
+        privateKey: ${{ secrets.M1_KEY }}
+        
+       
         
 #     steps:
 #     - uses: actions/checkout@v2
