@@ -1,10 +1,6 @@
-#creating sample code for TF
-#--------------------------Variabe------------------
 variable "aws_region" {
-  description = "The AWS region to create Infra."
-  default     = "us-east-2"
+  default = "us-east-2"
 }
-
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
   default     = "mylinkey"
@@ -13,4 +9,7 @@ variable "key_name" {
 variable "instance_type" {
   description = "instance type for ec2"
   default     = "t2.micro"
+}
+variable "AMI" {
+  default = "ami-0fb653ca2d3203ac1"
 }
