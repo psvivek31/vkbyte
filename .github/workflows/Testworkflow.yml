@@ -16,7 +16,7 @@ jobs:
         token : ${{secrets.VTAPI}}
       run: |
         pwd
-        python3 pythonAPI.py -t $token
+        python3 pythonAPI.py -t token
     - name: check on failure
       if: steps.test1.outcome != 'success'
       run: python3 pythonAPI.py -t $token
