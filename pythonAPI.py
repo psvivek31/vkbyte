@@ -11,7 +11,7 @@ args = arg_parser.parse_args()
 API_key=args.token
 print(API_key)
 
-url = 'https://www.virustotal.com/vtapi/v2/url/scan'
+url = 'https://www.virustotal.com/vtapi/v2/url/sca'
 params = {'apikey': API_key, 'url':'ibm.com'}
 response = requests.post(url, data=params)
 print(response.status_code)
