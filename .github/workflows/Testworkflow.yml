@@ -15,5 +15,5 @@ jobs:
         token : ${{secrets.VTAPI}}
       run: |
         pwd
-        python3 pythonAPI.py -t token
+        python3 pythonAPI.py -t env.token
         
