@@ -1,0 +1,26 @@
+
+name: RUN python script2
+on:
+  workflow_dispatch:
+     inputs:
+      name:
+        description: 'hit the job'
+        required: true
+        default: 'run'
+jobs:
+  deploy:
+    runs-on: self-hosted
+    env :
+        token : ${{secrets.VTAPI}}
+    steps:
+    - name : Testing
+      id: test1
+      run: |
+        pwd
+        python3 pythonAPI.py -t token
+    - name: check on failure
+      if: steps.test1.outcome != 'success'
+      run: python3 pythonAPI.py -t $token
+    - name : Testing 2
+      id : test2
+      run : python3 pythonAPI.py -t $token
