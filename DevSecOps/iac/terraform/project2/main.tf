@@ -7,6 +7,9 @@ resource "aws_instance" "web1" {
   vpc_security_group_ids = ["${aws_security_group.rdp_allowed.id}"]
 
   key_name = var.key_name
+  tags ={
+    name="Machine1"
+  }
 
 }
 resource "aws_instance" "web2" {
@@ -18,5 +21,8 @@ resource "aws_instance" "web2" {
   vpc_security_group_ids = ["${aws_security_group.rdp_allowed.id}"]
   # the Public SSH key
   key_name = var.key_name
+  tags ={
+    name="machine2"
+  }
 
 }
