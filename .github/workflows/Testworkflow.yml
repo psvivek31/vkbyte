@@ -12,13 +12,14 @@ jobs:
     env :
         token : ${{secrets.VTAPI}}
     outputs:
-      output1: ${{steps.test1.outputs}}
+      output1: ${{steps.test1.outputs.test}}
     steps:
     - name : Testing
       id: test1
       run: |
         pwd
         python3 pythonAPI.py -t token
+        echo "::set-output name=test::hello"
         
     - name: check on failure
       if: steps.test1.outcome != 'success'
