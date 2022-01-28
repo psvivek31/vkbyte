@@ -9,7 +9,7 @@ on:
         default: 'run'
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env :
         token : ${{secrets.VTAPI}}
     steps:
