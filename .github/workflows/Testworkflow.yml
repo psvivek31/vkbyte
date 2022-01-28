@@ -24,12 +24,13 @@ jobs:
         
     - name: check on failure
       continue-on-error: true
+      id : retry
       if: steps.test1.outcome == 'failure'
       run: python3 pythonAPI.py -t $token
     - name: retry
       continue-on-error: true
       id: retry1
-      if: steps.test.outcome=='failure'
+      if: steps.retry.outcome=='failure'
       run : python3 pythonAPI.py -t $token
     - name : regex_match
       id : reg1
