@@ -15,15 +15,22 @@ jobs:
       output1: ${{steps.test1.outputs.test}}
     steps:
     - name : Testing
+      continue-on-error: true
       id: test1
       run: |
         pwd
-        python3 pythonAPI.py -t token
+        python3 pythonAPI.py -t $token
         echo "::set-output name=test::hello"
         
     - name: check on failure
-      if: steps.test1.outcome != 'success'
+      continue-on-error: true
+      if: steps.test1.outcome == 'failure'
       run: python3 pythonAPI.py -t $token
+    - name: retry
+      continue-on-error: true
+      id: retry1
+      if: steps.test.outcome=='failure'
+      run : python3 pythonAPI.py -t $token
     - name : regex_match
       id : reg1
       run : |
