@@ -10,8 +10,8 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-    - name :
-      with :
-        token : ${{secrets.VTAPI}}
+    - name : Testing
+      env:
+        token: ${{secrets.VTAPI}}
       run: |
         python3 pythonAPI.py -t token
