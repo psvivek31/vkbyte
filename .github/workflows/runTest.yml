@@ -1,0 +1,17 @@
+name: Testing python script
+on:
+  workflow_dispatch:
+     inputs:
+      name:
+        description: 'hit the job'
+        required: true
+        default: 'run'
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name :
+      with :
+        token : ${{secrets.VTAPI}}
+      run: |
+        python3 pythonAPI.py -t token
