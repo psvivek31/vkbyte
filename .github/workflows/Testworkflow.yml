@@ -20,5 +20,8 @@ jobs:
     - name: check on failure
       if: steps.test1.outcome != 'success'
       run: python3 pythonAPI.py -t $token
+    - name : Testing 2
+      id : test2
+      run : python3 pythonAPI.py -t $token
         
         
