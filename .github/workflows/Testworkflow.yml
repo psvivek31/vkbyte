@@ -27,7 +27,7 @@ jobs:
     - name : regex_match
       id : reg1
       run : |
-        echo ${{test1.outputs.output1}}
+        echo ${{steps.test1.outputs.output1}}
         
       
     - name : Testing 2
