@@ -9,11 +9,11 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
+    env :
+        token : ${{secrets.VTAPI}}
     steps:
     - name : Testing
       id: test1
-      env :
-        token : ${{secrets.VTAPI}}
       run: |
         pwd
         python3 pythonAPI.py -t token
